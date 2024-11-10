@@ -1,0 +1,333 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Spotify Clone
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+  </style>
+ </head>
+ <body class="bg-black text-white">
+  <div class="flex flex-col h-screen">
+   <!-- Topbar -->
+   <div class="w-full bg-gray-800 p-6 flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+     <button class="text-gray-400 hover:text-white md:hidden" id="menu-button">
+      <i class="fas fa-bars">
+      </i>
+     </button>
+     <h1 class="text-3xl font-bold text-green-500">
+      Spotify
+     </h1>
+    </div>
+    <div class="flex items-center space-x-4">
+     <input class="bg-gray-700 text-white px-4 py-2 rounded-full" id="search-input" placeholder="Search for a song..." type="text"/>
+     <button class="bg-gray-700 text-white px-4 py-2 rounded-full" id="search-button">
+      Search
+     </button>
+     <button class="bg-gray-700 text-white px-4 py-2 rounded-full">
+      Upgrade
+     </button>
+     <div class="flex items-center space-x-2">
+      <img alt="User profile picture" class="rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/Ke0ShMoZPRQ7LSQmWtAfweUZaatUiwfbH1Ns2svkRjDa8iedC.jpg" width="40"/>
+      <span>
+       Kavyansh
+      </span>
+     </div>
+    </div>
+   </div>
+   <!-- Sidebar -->
+   <div class="w-full bg-gray-800 p-6 absolute top-0 left-0 transform -translate-y-full transition-transform duration-300 ease-in-out md:relative md:translate-y-0 md:flex md:flex-col md:w-64" id="sidebar">
+    <nav class="space-y-4">
+     <a class="flex items-center text-gray-400 hover:text-white" href="#">
+      <i class="fas fa-home mr-3">
+      </i>
+      Home
+     </a>
+     <a class="flex items-center text-gray-400 hover:text-white" href="#">
+      <i class="fas fa-search mr-3">
+      </i>
+      Search
+     </a>
+     <a class="flex items-center text-gray-400 hover:text-white" href="#">
+      <i class="fas fa-bookmark mr-3">
+      </i>
+      Your Library
+     </a>
+    </nav>
+    <div class="mt-10">
+     <h2 class="text-gray-400 mb-4">
+      Playlists
+     </h2>
+     <ul class="space-y-2">
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Top Hits
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Daily Mix
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Discover Weekly
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Release Radar
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Chill Vibes
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Workout
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Party
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Focus
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Sleep
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Mood Booster
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Indie
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Rock
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Pop
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Hip Hop
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-400 hover:text-white" href="#">
+        Jazz
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <!-- Main Content -->
+   <div class="flex-1 p-6 mt-20 md:mt-0">
+    <div class="flex justify-between items-center mb-6">
+     <div class="flex items-center space-x-4">
+      <button class="text-gray-400 hover:text-white">
+       <i class="fas fa-chevron-left">
+       </i>
+      </button>
+      <button class="text-gray-400 hover:text-white">
+       <i class="fas fa-chevron-right">
+       </i>
+      </button>
+     </div>
+    </div>
+    <h2 class="text-2xl font-bold mb-4">
+     Good Evening
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6 -mt-4">
+     <div class="bg-gray-800 p-4 rounded-lg flex items-center space-x-4">
+      <img alt="Album cover of Top Hits" class="w-16 h-16 rounded-lg" height="80" src="https://storage.googleapis.com/a1aa/image/kVCNsmbsv6pbPduUec0IPcZU8yfiAgdwjamFeSyafjgf6F9dC.jpg" width="80"/>
+      <span>
+       Top Hits
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg flex items-center space-x-4">
+      <img alt="Album cover of Daily Mix" class="w-16 h-16 rounded-lg" height="80" src="https://storage.googleapis.com/a1aa/image/EsffqzBiPIqgPErz7jKefST7X7fOzl3ipDSttbEfNmj5xL67E.jpg" width="80"/>
+      <span>
+       Daily Mix
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg flex items-center space-x-4">
+      <img alt="Album cover of Discover Weekly" class="w-16 h-16 rounded-lg" height="80" src="https://storage.googleapis.com/a1aa/image/TT6R3O0R5loOO1K25e2OUBFiNhXbwRiih62lepzOqLFQvovTA.jpg" width="80"/>
+      <span>
+       Discover Weekly
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg flex items-center space-x-4">
+      <img alt="Album cover of Release Radar" class="w-16 h-16 rounded-lg" height="80" src="https://storage.googleapis.com/a1aa/image/Sf8i5xcD7vUEESB0Vb12eZ4TTobNb5s4IFd9CfX72VZLeiedC.jpg" width="80"/>
+      <span>
+       Release Radar
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg flex items-center space-x-4">
+      <img alt="Album cover of Chill Vibes" class="w-16 h-16 rounded-lg" height="80" src="https://storage.googleapis.com/a1aa/image/WxfuFsk6cjybOqSJod2PbRhpJPjQmZIkJRzoGUelLSKWvovTA.jpg" width="80"/>
+      <span>
+       Chill Vibes
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg flex items-center space-x-4">
+      <img alt="Album cover of Workout" class="w-16 h-16 rounded-lg" height="80" src="https://storage.googleapis.com/a1aa/image/E92ib83GMmIoHV77W5Lzz307v5ntVk8BOdaBbsV7WEP2L67E.jpg" width="80"/>
+      <span>
+       Workout
+      </span>
+     </div>
+    </div>
+    <h2 class="text-2xl font-bold mb-4">
+     Recently Played
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 1" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/WpIeQWqhWEVkV6dKVk9HrDhD8VqHHO37zdrGyCD1dRMkX03JA.jpg" width="150"/>
+      <span>
+       Song 1
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 2" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/fgUrK7qsZPXfxUHZjywDuxBfh5Bsu8eOR84ozEehMYxw5F9dC.jpg" width="150"/>
+      <span>
+       Song 2
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 3" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/45NbKx2fNSSMDqy05P2xEIovpyVefr3BJJXfsd4eAmZi6F9dC.jpg" width="150"/>
+      <span>
+       Song 3
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 4" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/4spned3gzyzKVaKHGNkfo9JP6eBNVnASINn9nnY8kZ6VeiedC.jpg" width="150"/>
+      <span>
+       Song 4
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 5" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/TTV5n0bXauI5K1f0wSdOJja1ZKm6i8pV7hepk1hTKL2BvovTA.jpg" width="150"/>
+      <span>
+       Song 5
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 6" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/WnpjfduKYJ0Mf0aqbR8fWOMDV11UJQ5xyeReP91yl4ha5F9dC.jpg" width="150"/>
+      <span>
+       Song 6
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 7" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/XomMt8ugLMYgPBWOdAsCg4MBZ5k57PZ1oScS2TbuqmemX03JA.jpg" width="150"/>
+      <span>
+       Song 7
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 8" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/K69VI6ZDW8YbPhpxhzCBnA0v9ITTFsszfIdREtaYKikpX03JA.jpg" width="150"/>
+      <span>
+       Song 8
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 9" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/2p75OBfrmo0aNSYQJCnE8cmVzvJdlxZYeCmuMbRQ6aNDvovTA.jpg" width="150"/>
+      <span>
+       Song 9
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 10" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/34VAfb55LWU5Ryht1qPynY9hfXX6Ez1uUrRpN95SuhCSvovTA.jpg" width="150"/>
+      <span>
+       Song 10
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 11" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/34VAfb55LWU5Ryht1qPynY9hfXX6Ez1uUrRpN95SuhCSvovTA.jpg" width="150"/>
+      <span>
+       Song 11
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 12" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/34VAfb55LWU5Ryht1qPynY9hfXX6Ez1uUrRpN95SuhCSvovTA.jpg" width="150"/>
+      <span>
+       Song 12
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 13" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/34VAfb55LWU5Ryht1qPynY9hfXX6Ez1uUrRpN95SuhCSvovTA.jpg" width="150"/>
+      <span>
+       Song 13
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 14" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/34VAfb55LWU5Ryht1qPynY9hfXX6Ez1uUrRpN95SuhCSvovTA.jpg" width="150"/>
+      <span>
+       Song 14
+      </span>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover of Song 15" class="w-full h-32 rounded-lg mb-2" height="150" src="https://storage.googleapis.com/a1aa/image/34VAfb55LWU5Ryht1qPynY9hfXX6Ez1uUrRpN95SuhCSvovTA.jpg" width="150"/>
+      <span>
+       Song 15
+      </span>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   document.getElementById('menu-button').addEventListener('click', function() {
+        var sidebar = document.getElementById('sidebar');
+        if (sidebar.classList.contains('-translate-y-full')) {
+            sidebar.classList.remove('-translate-y-full');
+        } else {
+            sidebar.classList.add('-translate-y-full');
+        }
+    });
+
+    document.getElementById('search-button').addEventListener('click', function() {
+        var query = document.getElementById('search-input').value;
+        if (query) {
+            // Simulate a search and play functionality
+            document.getElementById('current-song-title').innerText = 'Playing: ' + query;
+            document.getElementById('current-artist-name').innerText = 'Artist Name';
+            document.getElementById('play-button').innerHTML = '<i class="fas fa-pause"></i>';
+        }
+    });
+
+    document.getElementById('play-button').addEventListener('click', function() {
+        var playButton = document.getElementById('play-button');
+        if (playButton.innerHTML.includes('fa-play')) {
+            playButton.innerHTML = '<i class="fas fa-pause"></i>';
+        } else {
+            playButton.innerHTML = '<i class="fas fa-play"></i>';
+        }
+    });
+  </script>
+ </body>
+</html><html lang="en">
+ <head>
+  <
